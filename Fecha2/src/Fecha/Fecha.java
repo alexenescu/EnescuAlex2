@@ -4,11 +4,11 @@ public class Fecha {
 	private int dia;
 	private int mes;
 	private int anio;
-	
+
 	public Fecha(int dia, int mes, int anio) {
 		this.dia = dia;
 		this.mes = mes;
-		
+
 		this.anio = anio;
 	}
 
@@ -44,13 +44,16 @@ public class Fecha {
 			diasMes = 30;
 			break;
 		case 2:
-			if ((anio % 400 == 0) || ((anio % 4 == 0) && (anio % 100 != 0)))
+			if (bisiesto())
 				diasMes = 29;
 			else
 				diasMes = 28;
 			break;
 		}
 		return diasMes;
+	}
 
+	private boolean bisiesto() {
+		return true;
 	}
 }
